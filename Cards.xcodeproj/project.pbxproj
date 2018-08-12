@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FFCD9D3921200F1C00FD9317 /* PlayingCardDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD9D3821200F1C00FD9317 /* PlayingCardDeck.swift */; };
+		FFCD9D3B212022D700FD9317 /* PlayingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD9D3A212022D700FD9317 /* PlayingCardView.swift */; };
 		FFDBF586211F74D60057E747 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDBF585211F74D60057E747 /* AppDelegate.swift */; };
 		FFDBF588211F74D60057E747 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDBF587211F74D60057E747 /* ViewController.swift */; };
 		FFDBF58B211F74D60057E747 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFDBF589211F74D60057E747 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		FFCD9D3821200F1C00FD9317 /* PlayingCardDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardDeck.swift; sourceTree = "<group>"; };
+		FFCD9D3A212022D700FD9317 /* PlayingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardView.swift; sourceTree = "<group>"; };
 		FFDBF582211F74D50057E747 /* Cards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFDBF585211F74D60057E747 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFDBF587211F74D60057E747 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				FFDBF597211F76870057E747 /* Supporting Files */,
 				FFDBF587211F74D60057E747 /* ViewController.swift */,
 				FFDBF598211F76FB0057E747 /* PlayingCards.swift */,
+				FFCD9D3A212022D700FD9317 /* PlayingCardView.swift */,
 				FFCD9D3821200F1C00FD9317 /* PlayingCardDeck.swift */,
 				FFDBF589211F74D60057E747 /* Main.storyboard */,
 				FFDBF58C211F74E00057E747 /* Assets.xcassets */,
@@ -152,6 +155,7 @@
 				FFDBF588211F74D60057E747 /* ViewController.swift in Sources */,
 				FFCD9D3921200F1C00FD9317 /* PlayingCardDeck.swift in Sources */,
 				FFDBF586211F74D60057E747 /* AppDelegate.swift in Sources */,
+				FFCD9D3B212022D700FD9317 /* PlayingCardView.swift in Sources */,
 				FFDBF599211F76FB0057E747 /* PlayingCards.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

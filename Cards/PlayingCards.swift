@@ -8,23 +8,25 @@
 
 import Foundation
 
-struct PlayingCards
+struct PlayingCards:CustomStringConvertible
 {
+    var description: String{return "\(suit) \(rank)"}
     
     
     var suit:Suit
     var rank:Rank
     
-    enum Suit:String{
-        case spades = "♠"
-        case hearts = "💌"
-        case clubs = "♣"
-        case diamonds = "◆"
+    enum Suit:String, CustomStringConvertible{
+        case spades = "♠️"
+        case hearts = "♥️"
+        case clubs = "♣️"
+        case diamonds = "♦️"
         
         static var all = [Suit.spades,.hearts,.clubs,.diamonds]
+        var description: String{ return rawValue}
     }
     
-    enum Rank {
+    enum Rank:CustomStringConvertible {
         case ace
         case face(String)
         case numaric(Int)
@@ -48,6 +50,13 @@ struct PlayingCards
             }
             allRanks += [Rank.face("J"), .face("Q"), .face("K")]
             return allRanks
+        }
+        var description: String{
+            switch self {
+            case .ace: return "A"
+            case .face(let kind): return kind
+            case .numaric(let pipes): return "\(pipes)"
+            }
         }
     }
 }
