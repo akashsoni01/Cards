@@ -18,6 +18,8 @@ struct PlayingCards
         case hearts = "💌"
         case clubs = "♣"
         case diamonds = "◆"
+        
+        static var all = [Suit.spades,.hearts,.clubs,.diamonds]
     }
     
     enum Rank {
@@ -35,15 +37,15 @@ struct PlayingCards
             default : return 0
             }
             
-           static var all:[Rank] {
-                var allRank = [Rank.ace]
-                
-                for pipes in 2...10 {
-                    
-                }
-                
-                return allRank
+        }
+        static var all:[Rank] {
+            var allRanks = [Rank.ace]
+            
+            for pipe in 2...10 {
+                allRanks.append(Rank.numaric(pipe))
             }
+            allRanks += [Rank.face("J"),.face("Q"),.face("K")]
+            return allRanks
         }
     }
 }
