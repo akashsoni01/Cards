@@ -10,10 +10,12 @@ import Foundation
 
 struct PlayingCards
 {
+    
+    
     var suit:Suit
     var rank:Rank
     
-    enum Suit:String {
+    enum Suit:String{
         case spades = "♠"
         case hearts = "💌"
         case clubs = "♣"
@@ -44,7 +46,7 @@ struct PlayingCards
             for pipe in 2...10 {
                 allRanks.append(Rank.numaric(pipe))
             }
-            allRanks += [Rank.face("J"),.face("Q"),.face("K")]
+            allRanks += [Rank.face("J"), .face("Q"), .face("K")]
             return allRanks
         }
     }

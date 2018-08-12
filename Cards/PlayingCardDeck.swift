@@ -9,6 +9,23 @@
 import Foundation
 struct PlayingCardDeck {
    private(set) var cards = [PlayingCards]()
+    
+    init() {
+        for suit in PlayingCards.Suit.all{
+            for rank in PlayingCards.Rank.all{
+                cards.append(PlayingCards(suit:suit,rank:rank))
+            }
+            
+        }
+    }
+    
+    mutating func draw() -> PlayingCards? {
+        if cards.count > 0 {
+            return cards.remove(at: cards.count.arc4Random)
+        }else{
+            return nil
+        }
+    }
 }
 extension Int {
     var arc4Random: Int {
