@@ -19,7 +19,7 @@ class PlayingCardView: UIView {
         font = UIFontMetrics(forTextStyle: .body).scaledFont(for: font)
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .center
-        return NSAttributedString(string: string, attributes:[.font:font,.paragraphStyle:paragraphStyle])
+        return NSAttributedString(string: string, attributes: [.paragraphStyle:paragraphStyle, .font: font])
     }
     
     private var cornerString:NSAttributedString{
@@ -27,7 +27,7 @@ class PlayingCardView: UIView {
     }
     
     private lazy var upperLeftCornerLabel = createCornerLabel()
-    private lazy var bottomRightCornerLabel = createCornerLabel()
+    private lazy var lowerRightCornerLabel = createCornerLabel()
     
     func createCornerLabel() -> UILabel{
         let label = UILabel()
@@ -47,12 +47,20 @@ class PlayingCardView: UIView {
         super.layoutSubviews()
         configureCornerLabel(upperLeftCornerLabel)
         upperLeftCornerLabel.frame.origin = bounds.origin.offsetBy(dx: cornerOffset, dy: cornerOffset)
+        
+        configureCornerLabel(lowerRightCornerLabel)
+        lowerRightCornerLabel.frame.origin = CGPoint(x: bounds.maxX, y: bounds.maxY)
+        .offsetBy(dx: -cornerOffset, dy: -cornerOffset)
+        .offsetBy(dx: -lowerRightCornerLabel.frame.size.width , dy: -lowerRightCornerLabel.frame.size.height)
+        lowerRightCornerLabel.transform = CGAffineTransform.identity.translatedBy(x: lowerRightCornerLabel.frame.size.width, y: lowerRightCornerLabel.frame.size.height)
+            .rotated(by: CGFloat.pi)
+        
     }
     override func draw(_ rect: CGRect) {
-        let path = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius)
+        let roundedRect = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius)
         UIColor.white.setFill()
-        path.fill()
-        path.addClip()
+        roundedRect.fill()
+        roundedRect.addClip()
     }
 
 }
