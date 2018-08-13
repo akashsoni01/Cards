@@ -11,7 +11,7 @@ import UIKit
 class PlayingCardView: UIView {
     
     var suit:String="♥️" { didSet{setNeedsLayout(); setNeedsDisplay()} }
-    var rank:Int=7 { didSet{setNeedsLayout(); setNeedsDisplay()} }
+    var rank:Int=11 { didSet{setNeedsLayout(); setNeedsDisplay()} }
     var isFaceUp=true { didSet{setNeedsLayout(); setNeedsDisplay()} }
     
     private func centeredAttributedString(_ string:String, fontSize:CGFloat) -> NSAttributedString {
