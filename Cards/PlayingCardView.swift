@@ -8,11 +8,12 @@
 
 import UIKit
 
+@IBDesignable
 class PlayingCardView: UIView {
     
     var suit:String="♥️" { didSet{setNeedsLayout(); setNeedsDisplay()} }
-    var rank:Int=11 { didSet{setNeedsLayout(); setNeedsDisplay()} }
-    var isFaceUp=true { didSet{setNeedsLayout(); setNeedsDisplay()} }
+    var rank:Int=8 { didSet{setNeedsLayout(); setNeedsDisplay()} }
+    var isFaceUp:Bool=true { didSet{setNeedsLayout(); setNeedsDisplay()} }
     
     private func centeredAttributedString(_ string:String, fontSize:CGFloat) -> NSAttributedString {
         var font = UIFont.preferredFont(forTextStyle: .body).withSize(fontSize)
@@ -106,7 +107,7 @@ class PlayingCardView: UIView {
         UIColor.white.setFill()
         roundedRect.fill()
         roundedRect.addClip()
-        if let faceCardImage = UIImage(named: rankString+suit){
+        if let faceCardImage = UIImage(named: rankString + suit, in: Bundle(for: self.classForCoder), compatibleWith: traitCollection) {
             faceCardImage.draw(in: bounds.zoom(by: SizeRatio.faceCardImageSizeToBoundsSize))
         }else{
             drawPips()
